@@ -161,10 +161,10 @@ if(volumeslider && mutebutton){
     mutebutton.addEventListener('click',() =>{
         if(audioelement.muted){
             audioelement.muted=false;
-            mutebutton.textContent='mute';
+            mutebutton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
         }else{
             audioelement.muted=true;
-            mutebutton.textcontext='unmute';
+            mutebutton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
         }
     })
 }
