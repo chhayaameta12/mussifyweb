@@ -67,19 +67,18 @@ nav ul li{
     padding: 0 12px;
 }
 .container{
-    min-height: 60vh;
-    background-color: black;
-    color: white;
-    font-family: "Barlow", sans-serif;
+  min-height: 60vh;
+  background-color: black;
+  color: white;
+  font-family: "Barlow", sans-serif;
   font-weight: 100;
   font-style: italic;
   display: flex;
-  
   margin: 23px auto;
   width:70%;
   border-radius: 12px;
   padding: 34px;
-  background-image: url('main\ image.webp');
+  background-image: url('main.jpg');
 }
 .bottom{
     position: sticky;
@@ -91,9 +90,10 @@ nav ul li{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    
-
-    
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
 }
 .icons{
     margin-top: 14px;
@@ -132,6 +132,7 @@ nav ul li{
     cursor: pointer;
 }
 .songinfo{
+  margin: 10px;
     position: absolute;
     left: 0;
     font-family: "Barlow", sans-serif;
@@ -177,8 +178,8 @@ nav ul li{
   color:green;
   font-weight: bold;
   border: none;
-  border-radius: 10px;
-  padding: 10px 20px border-radius: 5px;
+  padding: 10px 10px;
+  border-radius: 50%;
   cursor : pointer;
 }
 
@@ -202,6 +203,121 @@ nav ul li{
     height: auto;
     padding: 10px;
   }
+  .navsearch {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .navsearch .searchinput,
+  .navsearch .searchselect {
+    display: none;
+  }
+  .navsearch .searchicon {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    background: #1db954;
+    color: #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  .container {
+    background: rgba(0,0,0,0.6) url('main.webp') center/cover no-repeat;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+   }
+  .bottom {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .songinfo {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    width: 100vw;
+    font-size: 1.1rem;
+  }
+  #myprogressbar {
+    width: 90vw;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+  #volumecontrols {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    margin: 0;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    z-index: 10;
+  }
+  #volumeslider {
+    width: 80px;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  #volumecontrols::after {
+    content: '';
+  }
+  #volumecontrols button#mutebutton {
+    position: absolute;
+    right: 10px;
+    left: auto;
+    bottom: 0;
+    margin: 0;
+    background: #1db954;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+  }
+  #volumecontrols {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    pointer-events: none;
+  }
+  #volumeslider, #mutebutton {
+    pointer-events: auto;
+  }
+  #volumecontrols {
+    font-size: 0;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+  }
+  .navsearch {
+    margin-left: auto;
+    margin-right: 10px;
+    order: 99;
+  }
 }
 
 /* Tablets */
@@ -219,6 +335,38 @@ nav ul li{
     width: 300px;
     height: 250px;
     padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+  background-image: url('main.jpg');
+  }
+  .bottom {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .songinfo {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    width: 100vw;
+    font-size: 1.1rem;
+  }
+  #myprogressbar {
+    width: 70vw;
+    margin: 0 auto 10px auto;
+    display: block;
   }
 }
 
